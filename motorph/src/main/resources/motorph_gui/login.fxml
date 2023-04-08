@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="motorph_gui.LoginController">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="298.0" BorderPane.alignment="CENTER">
          <effect>
@@ -40,14 +40,14 @@
                </font>
             </Label>
             <TextField fx:id="username" layoutX="135.0" layoutY="190.0" prefHeight="31.0" prefWidth="150.0" promptText="Username" />
-            <PasswordField fx:id="password" layoutX="132.0" layoutY="229.0" prefHeight="34.0" prefWidth="155.0" promptText="Password" />
-            <Button fx:id="button" layoutX="130.0" layoutY="285.0" mnemonicParsing="false" style="-fx-background-color: #F4CF07;" text="Log In" />
+            <PasswordField fx:id="password" layoutX="134.0" layoutY="229.0" prefHeight="34.0" prefWidth="150.0" promptText="Password" />
+            <Button fx:id="button" layoutX="130.0" layoutY="285.0" mnemonicParsing="false" onAction="#userLogIn" style="-fx-background-color: #F4CF07;" text="Log In" />
             <ImageView fitHeight="72.0" fitWidth="45.0" layoutX="128.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/PngItem_2350746.png" />
                </image>
             </ImageView>
-            <Label fx:id="wronglogin" layoutX="130.0" layoutY="163.0" textFill="#ef0a0a" />
+            <Label fx:id="wrongLogIn" layoutX="130.0" layoutY="163.0" textFill="#ef0a0a" />
          </children>
       </AnchorPane>
    </center>
