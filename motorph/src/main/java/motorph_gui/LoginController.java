@@ -77,7 +77,7 @@ public class LoginController {
                     hourly_rate = Double.parseDouble(details[9]);
 
                     wrongLogIn.setText("Success!");
-                    App.setRoot("menu");
+                    App.setRoot("payroll");
                 }
                 else if (user.isEmpty() && pass.isEmpty()) {
                     wrongLogIn.setText("Please eneter you data.");
@@ -91,13 +91,118 @@ public class LoginController {
         } catch (Exception e) {
             // TODO: handle exception
             wrongLogIn.setText("File not found!");
-        }
-
-        
-
-
-       
+        }       
         
     }
     
+
+    public static void print_details() {
+        gross = total_hours() * hourly_rate;
+        double sss = compute_sss();
+        double pagibig = compute_pagibig();
+        double phealth = compute_philhealth();
+        double withholding = compute_withholding();
+
+        double perks = (rice_subsidy+phone_allowance+clothing_allowance)/4;
+        double deductions = sss+pagibig+phealth+withholding;
+        double net = gross - deductions;
+    }
+
+    // calculate and return total hours work in a week
+    public static int total_hours()
+    {
+        // sept 11, 2022 - sept 19, 2022
+        int total = 0;
+        for(int i = 0; i <6; i++)
+        {
+            int out = 17;
+            int in = 8;
+            int breaktime = 1;
+            total += (out - in) - breaktime;
+        }
+               
+        return total;
+    }
+
+    public static double compute_sss()
+    {
+        // check the beginning and return the rate
+        if(basic_salary < 3250){
+            return 135;
+        }
+
+        // not in the beginning, check the end and return rate
+        if(basic_salary >= 24751){
+            return 1125;
+        }
+
+        double rate = 157.5;
+        double rrate = 0;
+        // not in the beginning and end, it must be inside
+        // iterate every 500 then increase rate by 22.5 for every iteration
+        for(double i = 3250; i < 24751; i += 500){
+            // System.out.println(String.format("%s - %s = %s",i, i+500, rate));
+            // for every iteration check salary range
+            if(basic_salary >= i && basic_salary < i+500){
+                // we're inside that means we satisfy the salary range
+                // save the rateso we can return it, then exit the loop 
+                rrate = rate;
+                break;
+            }
+            rate += 22.5;
+        }
+        // no explanation needed
+        return rrate;
+    }
+
+    public static double compute_pagibig()
+    {
+        if(basic_salary <= 1500){
+            return basic_salary * 0.01;
+        } else {
+            return basic_salary * 0.02;
+        }
+    }
+
+    public static double compute_philhealth()
+    {
+        double base = (basic_salary * 0.03) / 2;
+        if(base <= 300){
+            return 300;
+        }else if(base >= 1800){
+            return 1800;
+        }else{
+            return base;
+        }
+    }
+
+    public static double compute_withholding()
+    {
+        double total_deductions = compute_pagibig()+compute_philhealth()+compute_philhealth();
+        double taxable_income = basic_salary - total_deductions;
+        double tax = 0;
+
+        if(taxable_income <= 20832){
+            return 0;
+        }else if(taxable_income > 20832 && taxable_income < 33333){
+            tax =  (taxable_income - 20833) * .02;
+        }else if(taxable_income >= 33333 && taxable_income < 66667){
+            tax =  (taxable_income - 33333) * .25 + 2500;
+        }else if(taxable_income >= 66667 && taxable_income < 166667){
+            tax = (taxable_income - 66667) * .3 + 10883;
+        }else if(taxable_income >= 166667 && taxable_income < 666667){
+            tax = (taxable_income - 166667) * .32 + 40833.33;
+        }else{
+            tax = (taxable_income - 666667) * .35 + 200833.33;
+        }
+
+        return tax / 4;
+    }
+
+    public static int sum(int x, int y)
+    {
+        return x + y;
+    }
+
+
 }
