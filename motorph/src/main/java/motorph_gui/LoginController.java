@@ -7,13 +7,19 @@ import java.io.IOException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+
+
 
 
 public class LoginController {
@@ -28,7 +34,16 @@ public class LoginController {
      static double clothing_allowance = 0;
      static double hourly_rate = 0d;
      static double gross = 0;
-
+     static double sss = 0;
+     static double pagibig = 0;
+     static double phealth = 0;
+     static double withholding = 0;
+     static double perks = 0;
+     static double deductions = 0;
+     static double net = 0;
+     static double totalh = 0;
+     
+     
     @FXML
     private Button button;
     @FXML
@@ -66,7 +81,9 @@ public class LoginController {
                 String[] details = line.split(",");
 
                 if(details[0].equals(user) && details[1].equals(pass)) {
+                    wrongLogIn.setText("Success!");
                     // put all details in the variables
+                    
                     emp_number = details[0];
                     name = details[2];
                     bday = details[3];
@@ -76,8 +93,38 @@ public class LoginController {
                     clothing_allowance = Double.parseDouble(details[7]);
                     hourly_rate = Double.parseDouble(details[9]);
 
-                    wrongLogIn.setText("Success!");
+                    
+
+                    print_details();
+                    String ss = String.valueOf(sss);                    
+                    String gros = Double.toString(gross);
+                    String pag = String.valueOf(pagibig);
+                    String ph = String.valueOf(phealth);
+                    String wh = String.valueOf(withholding);
+                    String td = String.valueOf(deductions);
+                    String th = String.valueOf(totalh);
+                    String tp = String.valueOf(perks);
+                    String ni = String.valueOf(net);
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("payroll.fxml"));
+                    loader.load();
+                    PayrollController payrollController = loader.getController();
+                    payrollController.displayNo(emp_number);
+                    payrollController.displayBday(bday);
+                    payrollController.displayUser(name);
+                    payrollController.displaySSS(ss);
+                    payrollController.displayPag(pag);
+                    payrollController.displayPh(ph);
+                    payrollController.displayWh(wh);
+                    payrollController.displayTd(td);
+                    payrollController.displayTh(th);
+                    payrollController.displayTp(tp);
+                    payrollController.displayNi(ni);
+                    payrollController.displayEmp(gros);
+                    
+                    
                     App.setRoot("payroll");
+                    
                 }
                 else if (user.isEmpty() && pass.isEmpty()) {
                     wrongLogIn.setText("Please eneter you data.");
@@ -90,7 +137,7 @@ public class LoginController {
             br.close();
         } catch (Exception e) {
             // TODO: handle exception
-            wrongLogIn.setText("File not found!");
+            wrongLogIn.setText("Error Encountered!");
         }       
         
     }
@@ -98,15 +145,17 @@ public class LoginController {
 
     public static void print_details() {
         gross = total_hours() * hourly_rate;
-        double sss = compute_sss();
-        double pagibig = compute_pagibig();
-        double phealth = compute_philhealth();
-        double withholding = compute_withholding();
-
-        double perks = (rice_subsidy+phone_allowance+clothing_allowance)/4;
-        double deductions = sss+pagibig+phealth+withholding;
-        double net = gross - deductions;
+        sss = compute_sss();
+        pagibig = compute_pagibig();
+        phealth = compute_philhealth();
+        withholding = compute_withholding();
+        perks = (rice_subsidy+phone_allowance+clothing_allowance)/4;
+        deductions = sss+pagibig+phealth+withholding;
+        net = gross - deductions;
+        totalh = total_hours();
     }
+
+
 
     // calculate and return total hours work in a week
     public static int total_hours()

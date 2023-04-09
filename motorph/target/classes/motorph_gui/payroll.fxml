@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="motorph_gui.PayrollController">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="269.0" BorderPane.alignment="CENTER">
@@ -43,16 +42,21 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="18.0" layoutY="301.0" prefHeight="32.0" prefWidth="66.0" text="Birthday:" textFill="#f4f3eb">
+            <Label layoutX="13.0" layoutY="301.0" prefHeight="32.0" prefWidth="66.0" text="Birthday:" textFill="#f4f3eb">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="bday" layoutX="84.0" layoutY="301.0" prefHeight="32.0" prefWidth="182.0" textFill="#f4f3eb">
+            <Label fx:id="fbday" layoutX="84.0" layoutY="301.0" prefHeight="32.0" prefWidth="182.0" textFill="#f4f3eb">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
+            <Button fx:id="reload" layoutX="15.0" layoutY="355.0" mnemonicParsing="false" onAction="#refresh" style="-fx-background-color: #f4cf07;" text="Refresh">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
@@ -124,12 +128,12 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="9.0" layoutY="275.0" prefHeight="32.0" prefWidth="110.0" text="Witholding Tax:" textFill="#f4f3eb">
+            <Label layoutX="7.0" layoutY="275.0" prefHeight="32.0" prefWidth="110.0" text="Witholding Tax:" textFill="#f4f3eb">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="9.0" layoutY="301.0" prefHeight="32.0" prefWidth="113.0" text="Total deduction:" textFill="#f4f3eb">
+            <Label layoutX="6.0" layoutY="301.0" prefHeight="32.0" prefWidth="113.0" text="Total deduction:" textFill="#f4f3eb">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
@@ -159,12 +163,12 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="login" layoutX="87.0" layoutY="355.0" mnemonicParsing="false" style="-fx-background-color: #f4cf07;" text="Log Out" onAction="#back">
+            <Button fx:id="login" layoutX="86.0" layoutY="355.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #f4cf07;" text="Log Out">
                <font>
                   <Font name="Comic Sans MS Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="exit" layoutX="162.0" layoutY="355.0" mnemonicParsing="false" style="-fx-background-color: #f4cf07;" text="Exit" onAction="#close">
+            <Button fx:id="exit" layoutX="162.0" layoutY="355.0" mnemonicParsing="false" onAction="#close" style="-fx-background-color: #f4cf07;" text="Exit">
                <font>
                   <Font name="Comic Sans MS Bold" size="12.0" />
                </font>
