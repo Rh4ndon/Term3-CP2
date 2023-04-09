@@ -8,16 +8,18 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-import javafx.animation.PauseTransition;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+
 
 
 
@@ -109,20 +111,9 @@ public class LoginController {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("payroll.fxml"));
                     loader.load();
                     PayrollController payrollController = loader.getController();
-                    payrollController.displayNo(emp_number);
-                    payrollController.displayBday(bday);
-                    payrollController.displayUser(name);
-                    payrollController.displaySSS(ss);
-                    payrollController.displayPag(pag);
-                    payrollController.displayPh(ph);
-                    payrollController.displayWh(wh);
-                    payrollController.displayTd(td);
-                    payrollController.displayTh(th);
-                    payrollController.displayTp(tp);
-                    payrollController.displayNi(ni);
-                    payrollController.displayEmp(gros);
-                    
-                    
+                    String[] empData = {emp_number,bday,name,ss,pag,ph,wh,td,th,tp,ni,gros};
+                    payrollController.displayDetails(empData);
+                                       
                     App.setRoot("payroll");
                     
                 }

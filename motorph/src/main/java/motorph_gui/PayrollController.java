@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
+import java.util.Arrays;
+
 
 public class PayrollController {
     
@@ -61,83 +63,40 @@ public class PayrollController {
     
     @FXML
     private void refresh() throws IOException {
-      displayUser(cname);
-      displaySSS(csss);
-      displayBday(cbday);
-      displayNo(cemp_number);
-      displayPag(cpagibig);
-      displayPh(cphealth);
-      displayWh(WT);
-      displayTd(TD);
-      displayTp(TP);
-      displayTh(cphealth);
-      displayNi(NI);
-      displayEmp(cgross);
+      
+      empno.setText(cemp_number);
+      empname.setText(cname);
+      fbday.setText(cbday);
+      sss.setText(csss); 
+      pagibig.setText(cpagibig);
+      phealth.setText(cphealth);
+      wtax.setText(WT); 
+      tdeduct.setText(TD);
+      hwork.setText(HW);
+      tperks.setText(TP); 
+      netincome.setText(NI);
+      gincom.setText(cgross);
       
     }
+    
     @FXML
-    public void displayUser (String name) {
-        cname = name; 
-        empname.setText(cname);      
+    public void displayDetails(String [] empData){
+        cemp_number = empData[0];
+        cname = empData[2];
+        cbday = empData[1];
+        cgross = empData[11];
+        csss = empData[3];
+        cpagibig = empData[4];
+        cphealth = empData[5];
+        WT = empData[6];
+        TD = empData[7];
+        HW = empData[8];
+        TP = empData[9];
+        NI = empData[10];
+        System.out.println(cname);
+
     }
-    @FXML
-    public void displayNo (String emp_number) {
-        cemp_number = emp_number; 
-        empno.setText(cemp_number);      
-    }
-    @FXML
-    public void displayBday (String bday) {
-        cbday = bday; 
-        fbday.setText(bday);      
-    }
-    @FXML
-    public void displaySSS (String ss) {
-        csss = ss; 
-        sss.setText(csss);  
-      
-    }
-    @FXML
-    public void displayPag (String pag) {
-        cpagibig = pag; 
-        pagibig.setText(cpagibig);  
-            
-    }
-    @FXML
-    public void displayPh (String ph) {
-        cphealth = ph; 
-        phealth.setText(cphealth);  
-            
-    }
-    @FXML
-    public void displayWh (String wh) {
-        WT = wh;
-        wtax.setText(WT);                    
-    }
-    @FXML
-    public void displayTd (String td) {
-        TD = td;
-        tdeduct.setText(TD);                    
-    }
-    @FXML
-    public void displayTh (String th) {
-        HW = th;
-        hwork.setText(HW);                    
-    }
-    @FXML
-    public void displayTp (String tp) {
-        TP = tp;
-        tperks.setText(TP);                    
-    }
-    @FXML
-    public void displayNi (String ni) {
-        NI = ni;
-        netincome.setText(NI);                    
-    }
-    @FXML
-    public void displayEmp (String gros) {
-        cgross = gros;
-        gincom.setText(gros);                    
-    }
+    
     
 
     //Logout button
