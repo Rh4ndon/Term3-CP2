@@ -70,7 +70,7 @@ public class LoginController {
         try {
             // create br variable to hold csv file data
             // open our csv file with FileReader giving our path with csv_file variable
-            BufferedReader br = new BufferedReader(new FileReader("employee-details.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("employee-details.csv"));
             String line = "";
 
             // create a while loop and assign our csv file to line variable
