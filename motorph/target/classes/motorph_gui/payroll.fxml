@@ -52,11 +52,6 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="reload" layoutX="15.0" layoutY="355.0" mnemonicParsing="false" onAction="#refresh" style="-fx-background-color: #f4cf07;" text="Refresh">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="12.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
    </left>

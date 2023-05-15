@@ -60,24 +60,23 @@ public class PayrollController {
     static String TP = "";
     static String NI = "";
 
-    
     @FXML
-    private void refresh() throws IOException {
-      
-      empno.setText(cemp_number);
-      empname.setText(cname);
-      fbday.setText(cbday);
-      sss.setText(csss); 
-      pagibig.setText(cpagibig);
-      phealth.setText(cphealth);
-      wtax.setText(WT); 
-      tdeduct.setText(TD);
-      hwork.setText(HW);
-      tperks.setText(TP); 
-      netincome.setText(NI);
-      gincom.setText(cgross);
-      
+    public void initialize() throws IOException {
+        // initialization code here...
+        empno.setText(cemp_number);
+        empname.setText(cname);
+        fbday.setText(cbday);
+        sss.setText(csss); 
+        pagibig.setText(cpagibig);
+        phealth.setText(cphealth);
+        wtax.setText(WT); 
+        tdeduct.setText(TD);
+        hwork.setText(HW);
+        tperks.setText(TP); 
+        netincome.setText(NI);
+        gincom.setText(cgross);
     }
+
     
     @FXML
     public void displayDetails(String [] empData){
