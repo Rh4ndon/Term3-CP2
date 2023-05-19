@@ -22,7 +22,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         stg = stage;
         stage.setResizable(false);
-        scene = new Scene(loadFXML("login"), 640, 400);
+        scene = new Scene(loadFXML("login"), 700, 400);
         Image icon = new Image("logo-no-background.png");
         stage.getIcons().add(icon);
         stage.setTitle("Motor PH");

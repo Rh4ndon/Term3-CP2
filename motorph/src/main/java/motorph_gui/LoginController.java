@@ -2,9 +2,12 @@ package motorph_gui;
 
 import java.io.IOException;
 
+import motorph_gui.opencsv_jar_files.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+
+
 
 
 import javafx.event.ActionEvent;
@@ -63,6 +66,7 @@ public class LoginController {
     private void checkLogin() throws IOException {
 
         String user = username.getText();
+        String admin = "admin";
         String pass = password.getText();
 
         try {
@@ -83,7 +87,10 @@ public class LoginController {
                 if(details[0].equals(user) && details[1].equals(pass)) {
                     wrongLogIn.setText("Success!");
                     // put all details in the variables
-                    
+                    if (details[0].equals(admin)){
+                        App.setRoot("admin");
+                    }
+                    else {
                     emp_number = details[0];
                     name = details[2];
                     bday = details[3];
@@ -113,10 +120,12 @@ public class LoginController {
                     payrollController.displayDetails(empData);
                                        
                     App.setRoot("payroll");
+                }
+                    
                     
                 }
                 else if (user.isEmpty() && pass.isEmpty()) {
-                    wrongLogIn.setText("Please eneter you data.");
+                    wrongLogIn.setText("Please enter you data.");
                 }
                 else {
                     wrongLogIn.setText("Wrong username or password!!");
