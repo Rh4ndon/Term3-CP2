@@ -88,6 +88,7 @@ public class LoginController {
                     wrongLogIn.setText("Success!");
                     // put all details in the variables
                     if (details[0].equals(admin)){
+                       
                         App.setRoot("admin");
                     }
                     else {
@@ -103,15 +104,16 @@ public class LoginController {
                     
 
                     print_details();
-                    String ss = String.valueOf(sss);                    
-                    String gros = Double.toString(gross);
-                    String pag = String.valueOf(pagibig);
-                    String ph = String.valueOf(phealth);
-                    String wh = String.valueOf(withholding);
-                    String td = String.valueOf(deductions);
-                    String th = String.valueOf(totalh);
-                    String tp = String.valueOf(perks);
-                    String ni = String.valueOf(net);
+                    
+                    String ss = String.valueOf(Math.round(sss));                    
+                    String gros = Double.toString(Math.round(gross));
+                    String pag = String.valueOf(Math.round(pagibig));
+                    String ph = String.valueOf(Math.round(phealth));
+                    String wh = String.valueOf(Math.round(withholding));
+                    String td = String.valueOf(Math.round(deductions));
+                    String th = String.valueOf(Math.round(totalh));
+                    String tp = String.valueOf(Math.round(perks));
+                    String ni = String.valueOf(Math.round(net));
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("payroll.fxml"));
                     loader.load();
