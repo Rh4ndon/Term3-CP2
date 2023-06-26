@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PayrollController">
+   <left>
+      <AnchorPane fx:id="leave" prefHeight="400.0" prefWidth="269.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="176.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="img/logo-no-background.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="13.0" layoutY="212.0" prefHeight="38.0" prefWidth="206.0" text="Employee Details" textFill="#f4cf07">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="250.0" prefHeight="32.0" prefWidth="92.0" text="Employee No:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="empname" layoutX="60.0" layoutY="279.0" prefHeight="32.0" prefWidth="203.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="empno" layoutX="105.0" layoutY="250.0" prefHeight="32.0" prefWidth="162.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="279.0" prefHeight="32.0" prefWidth="49.0" text="Name:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="301.0" prefHeight="32.0" prefWidth="66.0" text="Birthday:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="fbday" layoutX="84.0" layoutY="301.0" prefHeight="32.0" prefWidth="182.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="302.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="38.0" prefWidth="84.0" text="Earnings" textFill="#f4cf07">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="46.0" prefHeight="32.0" prefWidth="92.0" text="Hours Work:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="68.0" prefHeight="32.0" prefWidth="101.0" text="Gross Income:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="gincom" layoutX="121.0" layoutY="68.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="hwork" layoutX="121.0" layoutY="46.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="91.0" prefHeight="32.0" prefWidth="101.0" text="Total Perks:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="111.0" prefHeight="32.0" prefWidth="101.0" text="Net Income:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="tperks" layoutX="121.0" layoutY="91.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="netincome" layoutX="121.0" layoutY="112.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="161.0" prefHeight="38.0" prefWidth="106.0" text="Deductions" textFill="#f4cf07">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="200.0" prefHeight="32.0" prefWidth="101.0" text="SSS:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="226.0" prefHeight="32.0" prefWidth="101.0" text="Pag-ibig:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="251.0" prefHeight="32.0" prefWidth="101.0" text="Philhealth:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="275.0" prefHeight="32.0" prefWidth="110.0" text="Witholding Tax:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="301.0" prefHeight="32.0" prefWidth="113.0" text="Total deduction:" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="sss" layoutX="151.0" layoutY="200.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="pagibig" layoutX="151.0" layoutY="226.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="phealth" layoutX="151.0" layoutY="251.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="wtax" layoutX="151.0" layoutY="275.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="tdeduct" layoutX="151.0" layoutY="301.0" prefHeight="32.0" prefWidth="122.0" textFill="#f4f3eb">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="login" layoutX="86.0" layoutY="355.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #f4cf07;" text="Log Out">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="exit" layoutX="162.0" layoutY="355.0" mnemonicParsing="false" onAction="#close" style="-fx-background-color: #f4cf07;" text="Exit">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

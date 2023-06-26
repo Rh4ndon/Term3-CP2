@@ -1,5 +1,6 @@
 {
-    "java.configuration.updateBuildConfiguration": "disabled",
-    "maven.view": "flat",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "motorph_gui/opencsv-4.1.jar"
+    ]
 }
