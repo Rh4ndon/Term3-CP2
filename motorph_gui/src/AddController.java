@@ -71,7 +71,7 @@ public class AddController {
 
     @FXML
     private void addEmp() throws IOException {
-        String leave = "5";
+        String leave = "20";
         String emp_name = fname.getText();
         String password = pass.getText();
         String emp_id = empid.getText();
