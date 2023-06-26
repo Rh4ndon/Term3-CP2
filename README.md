@@ -14,6 +14,7 @@ Welcome to the VS Code Java world. Here is a guideline to help you get started t
 
 The workspace contains two folders by default, where:
 
+- `motorph_gui`: is the main folder where you can find next 2 folder
 - `src`: the folder where you can find the main app App.java
 - `lib`: the folder to maintain dependencies
 
