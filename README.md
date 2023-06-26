@@ -25,6 +25,10 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 This App needs JDK and java fx
 You can download it [Here](https://drive.google.com/file/d/1hmO0h21K1613X3hN5WwYp5xqPRIGhqth/view?usp=sharing).
 
+Download this Repository and unzip
+Then you can already open the whole project folder named `Term3-CP2` in vscode 
+
+
  
 This App needs opencsv which it included in the files here the folder name is opencsv_jar_files add them to the Referenced Library 
 
