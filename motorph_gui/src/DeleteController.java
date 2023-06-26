@@ -2,9 +2,11 @@
 import com.opencsv.*;
 
 import java.io.BufferedWriter;
-
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,35 +25,15 @@ public class DeleteController {
     @FXML
     Button delete;
     @FXML
-    Button add_emp;
+    Button del_emp;
     @FXML
     TextField fname;
     @FXML
-    TextField pass;
-    @FXML
     TextField empid;
-    @FXML
-    TextField salary;
-    @FXML
-    TextField hrate;
-    @FXML
-    TextField birth;
-    @FXML
-    TextField rice;
-    @FXML
-    TextField phone;
-    @FXML
-    TextField clothing;
-    @FXML
-    TextField monthly;
+    
     @FXML
     Label success;
 
-
-
-    
-
-     
 
     //Logout button
     @FXML
@@ -70,51 +52,54 @@ public class DeleteController {
         App.setRoot("edit");
     }
 
+
     @FXML
-    private void del() throws IOException {
-        App.setRoot("delete");
+    private void addPage() throws IOException {
+        App.setRoot("add");
+        
     }
 
     @FXML
-    private void addEmp() throws IOException {
-        String leave = "5";
+    public void delEmp() throws IOException {
+        
+        delete();
+        success.setText("Employee Was Deleted To CSV!!!");
+        fname.setText("");
+        empid.setText("");
+    }
+
+    @FXML
+    public void delete() throws IOException{
         String emp_name = fname.getText();
-        String password = pass.getText();
         String emp_id = empid.getText();
-        String basic_salary = salary.getText();
-        String emp_birth = birth.getText();
-        String hourly_rate = hrate.getText();
-        String rice_sub = rice.getText();
-        String phone_all = phone.getText();
-        String clothing_all = clothing.getText();
-        String monthlyR = monthly.getText();
 
-         //Instantiating the CSVWriter class
-         BufferedWriter adwriter = new BufferedWriter(new FileWriter("employee-details.csv", true));
-         //Writing data to a csv file
-         String row[] = {emp_id, password, emp_name, emp_birth, basic_salary, rice_sub, phone_all, clothing_all, hourly_rate, leave};
-         //Writing data to the csv file
-         adwriter.write(emp_id + "," + password + "," + emp_name + "," + emp_birth + ","  + basic_salary + "," + rice_sub + "," + phone_all + "," + clothing_all + "," + monthlyR + "," + hourly_rate + "," + leave);
-         //Flushing data from writer to file
-         adwriter.flush();
+        // opening original csv file
+        String CSVFilename2 = "employee-details.csv";
+        //creating temp file
+        String tempFilename2 = CSVFilename2.replace(".csv", ".tmp");
+        CSVReader reader2 = new CSVReader(new FileReader(CSVFilename2));
+        //storing of data on an array
+        String[] row;
+        try(CSVWriter writer = new CSVWriter(new FileWriter(tempFilename2, true), ',', CSVWriter.NO_QUOTE_CHARACTER)){
+            while((row = reader2.readNext()) != null){
+                //if it encounters the employee number it will not write the details on the csv
+                if(!row[0].equals(emp_id) && !row[2].equals(fname)){ //12346
+                    writer.writeNext(row);
+                }
+            }
+            reader2.close();
+        } finally {
+            //deleting the original file
+            new File(CSVFilename2).delete();
+            //renaming the temp file as the original so it will became the original
+            new File(tempFilename2).renameTo(new File(CSVFilename2));
+        }
 
-         success.setText("Success Employee Was Added To CSV!!!");
-        
-         fname.setText("");
-         pass.setText("");
-         empid.setText("");
-         salary.setText("");
-         birth.setText("");
-         hrate.setText("");
-         rice.setText("");
-         phone.setText("");
-         clothing.setText("");
-         monthly.setText("");
 
-        
+
     }
 
-  
+    
 
 
 

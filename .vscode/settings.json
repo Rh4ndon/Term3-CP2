@@ -1,6 +1,12 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "motorph_gui/opencsv-4.1.jar"
+        "motorph_gui/opencsv-4.1.jar",
+        "opencsv_jar_files/commons-beanutils-1.9.3.jar",
+        "opencsv_jar_files/commons-collections-3.2.2.jar",
+        "opencsv_jar_files/commons-lang3-3.6.jar",
+        "opencsv_jar_files/commons-logging-1.2.jar",
+        "opencsv_jar_files/commons-text-1.1.jar",
+        "opencsv_jar_files/opencsv-4.1.jar"
     ]
 }

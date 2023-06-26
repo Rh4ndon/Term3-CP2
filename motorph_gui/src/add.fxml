@@ -17,14 +17,14 @@
          <top>
             <Pane prefHeight="83.0" prefWidth="1434.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="569.0" layoutY="21.0" text="Dashboard" textFill="GOLD">
+                  <Label layoutX="569.0" layoutY="21.0" text="Add Employee" textFill="GOLD">
                      <font>
                         <Font name="Ebrima Bold" size="16.0" />
                      </font>
                   </Label>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="25.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/logo-no-background.png" />
+                        <Image url="@img/logo-no-background.png" />
                      </image>
                   </ImageView>
                </children>

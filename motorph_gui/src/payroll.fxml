@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="300.0" fitWidth="176.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="img/logo-no-background.png" />
+                  <Image url="@img/logo-no-background.png" />
                </image>
             </ImageView>
             <Label layoutX="13.0" layoutY="212.0" prefHeight="38.0" prefWidth="206.0" text="Employee Details" textFill="#f4cf07">
