@@ -26,8 +26,10 @@ public class LoginController {
 
      // variables for employee details
      static String emp_number = "";
+     static String pass = "";
      static String name = "";
      static String bday = "";
+     static String month = "";
      static double basic_salary = 0;
      static double rice_subsidy = 0;
      static double phone_allowance = 0;
@@ -42,6 +44,7 @@ public class LoginController {
      static double deductions = 0;
      static double net = 0;
      static double totalh = 0;
+     static double leave = 0;
      
      
     @FXML
@@ -90,13 +93,16 @@ public class LoginController {
                     }
                     else {
                     emp_number = details[0];
+                    pass = details[1];
                     name = details[2];
                     bday = details[3];
                     basic_salary = Double.parseDouble(details[4]);
                     rice_subsidy = Double.parseDouble(details[5]);
                     phone_allowance = Double.parseDouble(details[6]);
                     clothing_allowance = Double.parseDouble(details[7]);
+                    month = details[8];
                     hourly_rate = Double.parseDouble(details[9]);
+                    leave = Double.parseDouble(details[10]);
 
                     
 
@@ -111,11 +117,17 @@ public class LoginController {
                     String th = String.valueOf(Math.round(totalh));
                     String tp = String.valueOf(Math.round(perks));
                     String ni = String.valueOf(Math.round(net));
+                    String lea = String.valueOf(Math.round(leave));
+                    String basic = String.valueOf(Math.round(basic_salary));
+                    String rice = String.valueOf(Math.round(rice_subsidy));
+                    String phone = String.valueOf(Math.round(phone_allowance));
+                    String clothing = String.valueOf(Math.round(clothing_allowance));
+                    String hourly = String.valueOf(Math.round(hourly_rate));
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("payroll.fxml"));
                     loader.load();
                     PayrollController payrollController = loader.getController();
-                    String[] empData = {emp_number,bday,name,ss,pag,ph,wh,td,th,tp,ni,gros};
+                    String[] empData = {emp_number,bday,name,ss,pag,ph,wh,td,th,tp,ni,gros,lea,pass,basic,rice,phone,clothing,month,hourly};
                     payrollController.displayDetails(empData);
                                        
                     App.setRoot("payroll");
