@@ -8,7 +8,7 @@ Motor-PH employee app with GUI using Javafx
 
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to take tour in our project using Visual Studio Code.
+Welcome to the VS Code Java world. Here is a guideline to help you get started to taking tour in our project using Visual Studio Code.
 
 ## Folder Structure
 
@@ -25,8 +25,9 @@ This App needs JDK and java fx
 You can download it [Here](https://drive.google.com/file/d/1hmO0h21K1613X3hN5WwYp5xqPRIGhqth/view?usp=sharing).
 
  
-This App needs opencsv which it included in the files here the folder name is opencsv_jar_files add them to the Reference Library 
- <img src="ref.png" width="100"/>
+This App needs opencsv which it included in the files here the folder name is opencsv_jar_files add them to the Referenced Library 
+
+ <img src="ref.png" width="500"/>
 
 
 
