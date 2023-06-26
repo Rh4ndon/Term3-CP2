@@ -50,23 +50,17 @@
          <center>
             <Pane prefHeight="483.0" prefWidth="1062.0" style="-fx-background-color: #FFD700;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="96.0" layoutY="88.0" prefHeight="26.0" prefWidth="154.0" text="Name">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="fname" layoutX="95.0" layoutY="114.0" promptText="Full Name" />
-                  <Button fx:id="del_emp" layoutX="359.0" layoutY="158.0" mnemonicParsing="false" onAction="#delEmp" prefHeight="25.0" prefWidth="67.0" text="Delete">
+                  <Button fx:id="del_emp" layoutX="297.0" layoutY="127.0" mnemonicParsing="false" onAction="#delEmp" prefHeight="25.0" prefWidth="67.0" text="Delete">
                      <font>
                         <Font name="Comic Sans MS" size="12.0" />
                      </font>
                   </Button>
-                  <Label layoutX="283.0" layoutY="88.0" prefHeight="26.0" prefWidth="154.0" text="Employee ID">
+                  <Label layoutX="98.0" layoutY="101.0" prefHeight="26.0" prefWidth="154.0" text="Employee ID">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="empid" layoutX="279.0" layoutY="114.0" promptText="ID No." />
+                  <TextField fx:id="empid" layoutX="94.0" layoutY="127.0" promptText="ID No." />
                   <Label fx:id="success" layoutX="72.0" layoutY="10.0" prefHeight="33.0" prefWidth="392.0" textFill="#19bd0f">
                      <font>
                         <Font name="Comic Sans MS Bold" size="20.0" />

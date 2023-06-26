@@ -26,8 +26,7 @@ public class DeleteController {
     Button delete;
     @FXML
     Button del_emp;
-    @FXML
-    TextField fname;
+    
     @FXML
     TextField empid;
     
@@ -63,14 +62,12 @@ public class DeleteController {
     public void delEmp() throws IOException {
         
         delete();
-        success.setText("Employee Was Deleted To CSV!!!");
-        fname.setText("");
-        empid.setText("");
+        
     }
 
     @FXML
     public void delete() throws IOException{
-        String emp_name = fname.getText();
+        
         String emp_id = empid.getText();
 
         // opening original csv file
@@ -83,8 +80,10 @@ public class DeleteController {
         try(CSVWriter writer = new CSVWriter(new FileWriter(tempFilename2, true), ',', CSVWriter.NO_QUOTE_CHARACTER)){
             while((row = reader2.readNext()) != null){
                 //if it encounters the employee number it will not write the details on the csv
-                if(!row[0].equals(emp_id) && !row[2].equals(fname)){ //12346
+                if(!row[0].equals(emp_id)){ //12346
                     writer.writeNext(row);
+                }else{
+                    success.setText("Employee Details not found in the CSV!");
                 }
             }
             reader2.close();
@@ -93,7 +92,13 @@ public class DeleteController {
             new File(CSVFilename2).delete();
             //renaming the temp file as the original so it will became the original
             new File(tempFilename2).renameTo(new File(CSVFilename2));
+
+            success.setText("Employee Was Deleted To CSV!!!");
+            empid.setText("");
         }
+        
+       
+        
 
 
 

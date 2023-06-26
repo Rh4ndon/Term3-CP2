@@ -1,16 +1,19 @@
 import java.io.BufferedWriter;
-
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddController {
+public class EditController {
     @FXML
     Button out;
     @FXML
@@ -22,7 +25,7 @@ public class AddController {
     @FXML
     Button delete;
     @FXML
-    Button add_emp;
+    Button edit_emp;
     @FXML
     TextField fname;
     @FXML
@@ -44,6 +47,8 @@ public class AddController {
     @FXML
     TextField monthly;
     @FXML
+    TextField leave_days;
+    @FXML
     Label success;
 
 
@@ -60,18 +65,20 @@ public class AddController {
    
 
     @FXML
-    private void edit() throws IOException {
-        App.setRoot("edit");
+    private void addPage(ActionEvent event) throws IOException {
+        App.setRoot("add");
+        
     }
-
+    
     @FXML
     private void del() throws IOException {
         App.setRoot("delete");
     }
 
     @FXML
-    private void addEmp() throws IOException {
-        String leave = "5";
+    private void editEmp() throws IOException {
+     
+        
         String emp_name = fname.getText();
         String password = pass.getText();
         String emp_id = empid.getText();
@@ -82,6 +89,30 @@ public class AddController {
         String phone_all = phone.getText();
         String clothing_all = clothing.getText();
         String monthlyR = monthly.getText();
+        String leave = leave_days.getText();
+
+        // opening original csv file
+        String CSVFilename2 = "employee-details.csv";
+        //creating temp file
+        String tempFilename2 = CSVFilename2.replace(".csv", ".tmp");
+        CSVReader reader2 = new CSVReader(new FileReader(CSVFilename2));
+        //storing of data on an array
+        String[] row;
+        try(CSVWriter writer = new CSVWriter(new FileWriter(tempFilename2, true), ',', CSVWriter.NO_QUOTE_CHARACTER)){
+            while((row = reader2.readNext()) != null){
+                //if it encounters the employee number it will not write the details on the csv
+                if(!row[0].equals(emp_id)){ //12346
+                    writer.writeNext(row);
+                }
+            }
+            reader2.close();
+        } finally {
+            //deleting the original file
+            new File(CSVFilename2).delete();
+            //renaming the temp file as the original so it will became the original
+            new File(tempFilename2).renameTo(new File(CSVFilename2));
+        }
+
 
          //Instantiating the CSVWriter class
          CSVWriter adwriter = new CSVWriter(new FileWriter("employee-details.csv",true), ',', CSVWriter.NO_QUOTE_CHARACTER);
@@ -92,7 +123,8 @@ public class AddController {
          //Flushing data from writer to file
          adwriter.flush();
 
-         success.setText("Success Employee Was Added To CSV!!!");
+         
+         success.setText("Success Employee Details Was Edited!");
         
          fname.setText("");
          pass.setText("");
@@ -105,7 +137,7 @@ public class AddController {
          clothing.setText("");
          monthly.setText("");
 
-        
+
     }
 
   

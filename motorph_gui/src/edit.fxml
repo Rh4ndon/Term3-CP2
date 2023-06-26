@@ -10,21 +10,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminController">
+<AnchorPane prefHeight="400.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0">
          <!-- Top -->
          <top>
             <Pane prefHeight="83.0" prefWidth="1434.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="569.0" layoutY="21.0" text="Dashboard" textFill="GOLD">
+                  <Label layoutX="569.0" layoutY="21.0" text="Edit Employee" textFill="GOLD">
                      <font>
                         <Font name="Ebrima Bold" size="16.0" />
                      </font>
                   </Label>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="25.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/logo-no-background.png" />
+                        <Image url="@img/logo-no-background.png" />
                      </image>
                   </ImageView>
                </children>
@@ -34,12 +34,11 @@
          <left>
             <Pane prefHeight="445.0" prefWidth="155.0" style="-fx-background-color: #696969;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="20.0" layoutY="62.0" mnemonicParsing="false" prefWidth="110.0" text="Home" />
-                  <Button fx:id="payroll" layoutX="21.0" layoutY="98.0" mnemonicParsing="false" prefWidth="110.0" text="Payroll" />
-                  <Button fx:id="addemp" layoutX="20.0" layoutY="133.0" mnemonicParsing="false" prefWidth="110.0" text="Add Employee" />
-                  <Button fx:id="editemp" layoutX="20.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="110.0" text="Edit Employee" textAlignment="CENTER" />
+                  <Button fx:id="home" layoutX="20.0" layoutY="62.0" mnemonicParsing="false" onAction="#homePage" prefWidth="110.0" text="Home" />
+                  <Button fx:id="addemp" layoutX="23.0" layoutY="113.0" mnemonicParsing="false" onAction="#addPage" prefWidth="110.0" text="Add Employee" />
+                  <Button fx:id="editemp" layoutX="20.0" layoutY="158.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="110.0" text="Edit Employee" textAlignment="CENTER" />
                   <Button fx:id="out" layoutX="48.0" layoutY="278.0" mnemonicParsing="false" onAction="#logOut" text="Logout" />
-                  <Button fx:id="delete" layoutX="20.0" layoutY="213.0" mnemonicParsing="false" prefWidth="110.0" text="Delete Employee" />
+                  <Button fx:id="delete" layoutX="20.0" layoutY="213.0" mnemonicParsing="false" onAction="#del" prefWidth="110.0" text="Delete Employee" />
                   <Label layoutX="32.0" layoutY="14.0" text="MotorPH" textFill="GOLD">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
@@ -51,74 +50,37 @@
          <center>
             <Pane prefHeight="483.0" prefWidth="1062.0" style="-fx-background-color: #FFD700;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="empno" layoutX="26.0" layoutY="23.0" />
-                  <Button fx:id="search" layoutX="185.0" layoutY="23.0" mnemonicParsing="false" onAction="#searchID" text="Search" />
-                  <Label layoutX="17.0" layoutY="61.0" prefHeight="26.0" prefWidth="337.0" text="Name">
+                  <Label layoutX="17.0" layoutY="31.0" prefHeight="26.0" prefWidth="154.0" text="Name">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="368.0" layoutY="61.0" prefHeight="26.0" prefWidth="176.0" text="Birthdate">
+                  <Label layoutX="20.0" layoutY="256.0" prefHeight="26.0" prefWidth="176.0" text="Birthdate">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="16.0" layoutY="118.0" prefHeight="26.0" prefWidth="92.0" text="Basic Salary">
+                  <Label layoutX="16.0" layoutY="132.0" prefHeight="26.0" prefWidth="92.0" text="Basic Salary">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="368.0" layoutY="115.0" prefHeight="33.0" prefWidth="92.0" text="Rice Subcidy">
+                  <Label layoutX="220.0" layoutY="84.0" prefHeight="33.0" prefWidth="92.0" text="Rice Subcidy">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="367.0" layoutY="177.0" prefHeight="26.0" prefWidth="122.0" text="Phone Allowance">
+                  <Label layoutX="219.0" layoutY="146.0" prefHeight="26.0" prefWidth="122.0" text="Phone Allowance">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="363.0" layoutY="242.0" prefHeight="26.0" prefWidth="131.0" text="Clothing Allowance">
+                  <Label layoutX="215.0" layoutY="211.0" prefHeight="26.0" prefWidth="131.0" text="Clothing Allowance">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="177.0" prefHeight="26.0" prefWidth="131.0" text=" Hourly Rate">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="242.0" prefHeight="26.0" prefWidth="131.0" text="No. of Leave">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="birth" layoutX="368.0" layoutY="87.0" prefHeight="26.0" prefWidth="176.0">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="salary" layoutX="16.0" layoutY="145.0" prefHeight="26.0" prefWidth="92.0">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="rice" layoutX="368.0" layoutY="143.0" prefHeight="33.0" prefWidth="92.0">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="phone" layoutX="367.0" layoutY="203.0" prefHeight="26.0" prefWidth="122.0">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="clothing" layoutX="363.0" layoutY="261.0" prefHeight="26.0" prefWidth="131.0">
-                     <font>
-                        <Font name="Comic Sans MS" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="hrate" layoutX="14.0" layoutY="203.0" prefHeight="26.0" prefWidth="131.0">
+                  <Label layoutX="14.0" layoutY="191.0" prefHeight="26.0" prefWidth="131.0" text=" Hourly Rate">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
@@ -128,16 +90,47 @@
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="empname" layoutX="17.0" layoutY="87.0" prefHeight="26.0" prefWidth="337.0">
+                  <TextField fx:id="fname" layoutX="16.0" layoutY="57.0" promptText="Full Name" />
+                  <TextField fx:id="salary" layoutX="16.0" layoutY="162.0" promptText="Basic Salary" />
+                  <TextField fx:id="hrate" layoutX="16.0" layoutY="224.0" promptText="Hourly Rate" />
+                  <TextField fx:id="birth" layoutX="16.0" layoutY="282.0" promptText="Birthdate" />
+                  <TextField fx:id="rice" layoutX="219.0" layoutY="115.0" promptText="Rice Subcidy" />
+                  <TextField fx:id="phone" layoutX="219.0" layoutY="179.0" promptText="Phone Allowance" />
+                  <TextField fx:id="clothing" layoutX="219.0" layoutY="237.0" promptText="Clothing Allowance" />
+                  <Button fx:id="edit_emp" layoutX="272.0" layoutY="281.0" mnemonicParsing="false" onAction="#editEmp" prefHeight="25.0" prefWidth="67.0" text="Update">
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="222.0" layoutY="31.0" prefHeight="26.0" prefWidth="154.0" text="Employee ID">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="errorHandler" layoutX="300.0" layoutY="22.0" prefHeight="26.0" prefWidth="176.0" textFill="#e11010">
+                  <TextField fx:id="empid" layoutX="218.0" layoutY="57.0" promptText="ID No." />
+                  <Label layoutX="17.0" layoutY="82.0" prefHeight="26.0" prefWidth="154.0" text="Password">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="pass" layoutX="16.0" layoutY="103.0" promptText="Password" />
+                  <Label fx:id="success" layoutX="72.0" prefHeight="33.0" prefWidth="392.0" textFill="#19bd0f">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="385.0" layoutY="119.0" prefHeight="26.0" prefWidth="131.0" text="Monthly Rate">
+                     <font>
+                        <Font name="Comic Sans MS" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="monthly" layoutX="376.0" layoutY="147.0" promptText="Monthly Rate" />
+                  <Label layoutX="385.0" layoutY="178.0" prefHeight="26.0" prefWidth="131.0" text="Leave">
+                     <font>
+                        <Font name="Comic Sans MS" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="leave_days" layoutX="376.0" layoutY="199.0" promptText="Leave Days" />
                </children>
             </Pane>
          </center>
