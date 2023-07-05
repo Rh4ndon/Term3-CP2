@@ -23,6 +23,7 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 ## Dependency Management
 This App needs JDK and java fx
+It also need Extension Pack for Java on vs code just search `vscjava.vscode-java-pack`
 You can download it [Here](https://drive.google.com/file/d/1hmO0h21K1613X3hN5WwYp5xqPRIGhqth/view?usp=sharing).
 
 Download this Repository and unzip

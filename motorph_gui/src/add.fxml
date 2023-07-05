@@ -93,7 +93,6 @@
                   <TextField fx:id="fname" layoutX="16.0" layoutY="57.0" promptText="Full Name" />
                   <TextField fx:id="salary" layoutX="16.0" layoutY="162.0" promptText="Basic Salary" />
                   <TextField fx:id="hrate" layoutX="16.0" layoutY="224.0" promptText="Hourly Rate" />
-                  <TextField fx:id="birth" layoutX="16.0" layoutY="282.0" promptText="Birthdate" />
                   <TextField fx:id="rice" layoutX="219.0" layoutY="115.0" promptText="Rice Subcidy" />
                   <TextField fx:id="phone" layoutX="219.0" layoutY="179.0" promptText="Phone Allowance" />
                   <TextField fx:id="clothing" layoutX="219.0" layoutY="237.0" promptText="Clothing Allowance" />
@@ -125,6 +124,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="monthly" layoutX="376.0" layoutY="147.0" promptText="Monthly Rate" />
+                  <TextField fx:id="birth" layoutX="16.0" layoutY="281.0" promptText="Month Day Year" />
                </children>
             </Pane>
          </center>
